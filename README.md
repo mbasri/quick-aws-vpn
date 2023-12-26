@@ -1,93 +1,114 @@
+<!-- BEGIN_TF_DOCS -->
 # Quick AWS VPN
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+Terraform project which create VPC and Client VPN resource on AWS from scratch.
 
-## Getting started
+## *Create and destroy the infrastructure*
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+### 2. Create infrastructure
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/mbasri/quick-aws-vpn.git
-git branch -M main
-git push -uf origin main
+```shell
+git clone https://gitlab.com/mbasri/quick-aws-vpn.git
+cd quick-aws-vpn
+terraform init
+terraform apply
 ```
 
-## Integrate with your tools
+### 2. Destroy infrastructure
 
-- [ ] [Set up project integrations](https://gitlab.com/mbasri/quick-aws-vpn/-/settings/integrations)
+```shell
+git clone https://gitlab.com/mbasri/quick-aws-vpn.git
+cd quick-aws-vpn
+terraform init
+terraform destroy
+```
 
-## Collaborate with your team
+## Generate docs
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+```shell
+terraform-docs -c .terraform-docs.yml .
+```
 
-## Test and Deploy
+## Requirements
 
-Use the built-in continuous integration in GitLab.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.6.3 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 5.25.0 |
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+## Providers
 
-***
+No providers.
 
-# Editing this README
+## Modules
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_kms"></a> [kms](#module\_kms) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-kms | v1.0.4 |
+| <a name="module_security-group"></a> [security-group](#module\_security-group) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-security-group | v1.0.2 |
+| <a name="module_vpc"></a> [vpc](#module\_vpc) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-vpc | v1.1.0 |
 
-## Suggestions for a good README
+## Resources
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+No resources.
 
-## Name
-Choose a self-explaining name for your project.
+## Inputs
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+No inputs.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## Outputs
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+| Name | Description |
+|------|-------------|
+| <a name="output_default_security_group_id"></a> [default\_security\_group\_id](#output\_default\_security\_group\_id) | The ID of the VPC default security group |
+| <a name="output_iam_instance_profile_arn"></a> [iam\_instance\_profile\_arn](#output\_iam\_instance\_profile\_arn) | The ARN of the IAM Instance Profile |
+| <a name="output_iam_instance_profile_id"></a> [iam\_instance\_profile\_id](#output\_iam\_instance\_profile\_id) | The ID of the IAM Instance Profile |
+| <a name="output_iam_instance_profile_name"></a> [iam\_instance\_profile\_name](#output\_iam\_instance\_profile\_name) | The Name of the IAM Instance Profile |
+| <a name="output_instance_arn"></a> [instance\_arn](#output\_instance\_arn) | The Instance ARN |
+| <a name="output_instance_availability_zone"></a> [instance\_availability\_zone](#output\_instance\_availability\_zone) | The availability zone of the created instance |
+| <a name="output_instance_ebs_block_device_volume_ids"></a> [instance\_ebs\_block\_device\_volume\_ids](#output\_instance\_ebs\_block\_device\_volume\_ids) | Block devices IDs |
+| <a name="output_instance_id"></a> [instance\_id](#output\_instance\_id) | The Instance ID |
+| <a name="output_instance_instance_state"></a> [instance\_instance\_state](#output\_instance\_instance\_state) | The state of the instance |
+| <a name="output_instance_key_name"></a> [instance\_key\_name](#output\_instance\_key\_name) | The Key used by the Instance |
+| <a name="output_instance_primary_network_interface_id"></a> [instance\_primary\_network\_interface\_id](#output\_instance\_primary\_network\_interface\_id) | The ID of the instance's primary network interface |
+| <a name="output_instance_private_dns"></a> [instance\_private\_dns](#output\_instance\_private\_dns) | The private DNS name assigned to the instance. Can only be used inside the Amazon EC2, and only available if you've enabled DNS hostnames for your VPC |
+| <a name="output_instance_private_ip"></a> [instance\_private\_ip](#output\_instance\_private\_ip) | The private IP address assigned to the instance |
+| <a name="output_instance_root_block_device_volume_ids"></a> [instance\_root\_block\_device\_volume\_ids](#output\_instance\_root\_block\_device\_volume\_ids) | Root EBS IDs |
+| <a name="output_instance_subnet_id"></a> [instance\_subnet\_id](#output\_instance\_subnet\_id) | Subnet used by the instance |
+| <a name="output_instance_vpc_security_group_ids"></a> [instance\_vpc\_security\_group\_ids](#output\_instance\_vpc\_security\_group\_ids) | List of security group used by the instance |
+| <a name="output_key_alias_arn"></a> [key\_alias\_arn](#output\_key\_alias\_arn) | The Amazon Resource Name (ARN) of the key alias |
+| <a name="output_key_alias_name"></a> [key\_alias\_name](#output\_key\_alias\_name) | Name of the key alis |
+| <a name="output_key_arn"></a> [key\_arn](#output\_key\_arn) | The Amazon Resource Name (ARN) of the key |
+| <a name="output_key_id"></a> [key\_id](#output\_key\_id) | Name of the key |
+| <a name="output_key_policy"></a> [key\_policy](#output\_key\_policy) | The IAM resource policy set on the key |
+| <a name="output_nat_gateway_public_ips"></a> [nat\_gateway\_public\_ips](#output\_nat\_gateway\_public\_ips) | Private IP of NAT Gateway |
+| <a name="output_private_subnet_cidr"></a> [private\_subnet\_cidr](#output\_private\_subnet\_cidr) | List of cidr\_blocks of private subnets |
+| <a name="output_private_subnet_ids"></a> [private\_subnet\_ids](#output\_private\_subnet\_ids) | List of IDs of private subnets |
+| <a name="output_public_subnet_cidr"></a> [public\_subnet\_cidr](#output\_public\_subnet\_cidr) | List of cidr\_blocks of public subnets |
+| <a name="output_public_subnet_ids"></a> [public\_subnet\_ids](#output\_public\_subnet\_ids) | List of IDs of public subnets |
+| <a name="output_region"></a> [region](#output\_region) | The Name of the region |
+| <a name="output_secure_subnet_cidr"></a> [secure\_subnet\_cidr](#output\_secure\_subnet\_cidr) | List of cidr\_blocks of secure subnets |
+| <a name="output_secure_subnet_ids"></a> [secure\_subnet\_ids](#output\_secure\_subnet\_ids) | List of IDs of secure subnets |
+| <a name="output_security_group_arn"></a> [security\_group\_arn](#output\_security\_group\_arn) | The ARN of the security group |
+| <a name="output_security_group_description"></a> [security\_group\_description](#output\_security\_group\_description) | The description of the security group |
+| <a name="output_security_group_id"></a> [security\_group\_id](#output\_security\_group\_id) | The ID of the security group |
+| <a name="output_security_group_name"></a> [security\_group\_name](#output\_security\_group\_name) | The name of the security group |
+| <a name="output_security_group_owner_id"></a> [security\_group\_owner\_id](#output\_security\_group\_owner\_id) | The owner ID |
+| <a name="output_security_group_vpc_id"></a> [security\_group\_vpc\_id](#output\_security\_group\_vpc\_id) | The VPC ID |
+| <a name="output_spot_logging_cwl_id"></a> [spot\_logging\_cwl\_id](#output\_spot\_logging\_cwl\_id) | The IDs of the cloudwatch logs for Spot logging |
+| <a name="output_ssm_session"></a> [ssm\_session](#output\_ssm\_session) | Command to start ssm session |
+| <a name="output_vpc_cidr_blocks"></a> [vpc\_cidr\_blocks](#output\_vpc\_cidr\_blocks) | The CIDR block of the VPC |
+| <a name="output_vpc_flow_log_cwl_id"></a> [vpc\_flow\_log\_cwl\_id](#output\_vpc\_flow\_log\_cwl\_id) | The ID of the cloudwatch logs for VPC flow logs |
+| <a name="output_vpc_id"></a> [vpc\_id](#output\_vpc\_id) | The ID of the VPC |
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+## Author
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+* [**Mohamed BASRI**](https://gitlab.com/mbasri)
 
 ## License
-For open source projects, say how it is licensed.
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+This is free and unencumbered software released into the public domain - see the [LICENSE](./LICENSE) file for details
+
+<!-- END_TF_DOCS -->
