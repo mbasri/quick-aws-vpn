@@ -15,14 +15,14 @@ module "security-group" {
       from_port   = "80"
       to_port     = "80"
       cidr_ipv4   = "0.0.0.0/0"
-      description = "[Terraform] HTTP for Internet"
+      description = "[Terraform] HTTP for all IP"
     },
     {
       ip_protocol = "tcp"
       from_port   = "443"
       to_port     = "443"
       cidr_ipv4   = "0.0.0.0/0"
-      description = "[Terraform] HTTPS for Internet"
+      description = "[Terraform] HTTPS for all IP"
     }
   ]
 

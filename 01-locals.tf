@@ -7,12 +7,10 @@ locals {
 
   description = "Quick AWS VPN"
 
-  kms_name                  = local.name
-  vpc_name                  = local.name
-  security_group_name       = local.name
-  iam_instance_profile_name = local.name
-  instance_name             = local.name
-  ssm_parameter_name        = local.name
+  kms_name            = local.name
+  vpc_name            = local.name
+  security_group_name = local.name
+  client_vpn_name     = local.name
 
   tags = {
     "Name"        = local.name,
