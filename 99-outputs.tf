@@ -130,3 +130,22 @@ output "security_group_description" {
 #---------------------------------------------------------------------------------------------------
 # Client VPN
 #---------------------------------------------------------------------------------------------------
+output "client_vpn_endpoint_arn" {
+  value       = module.client-vpn.client_vpn_endpoint_arn
+  description = "The ARN of the Client VPN Endpoint Connection."
+}
+
+output "client_vpn_endpoint_id" {
+  value       = module.client-vpn.client_vpn_endpoint_id
+  description = "The ID of the Client VPN Endpoint Connection."
+}
+
+output "client_vpn_endpoint_dns_name" {
+  value       = module.client-vpn.client_vpn_endpoint_dns_name
+  description = "The DNS Name of the Client VPN Endpoint Connection."
+}
+
+output "cloudwatchlogs_id" {
+  value       = module.client-vpn.cloudwatchlogs_id
+  description = "The ID of the cloudwatch logs for Client VPN"
+}

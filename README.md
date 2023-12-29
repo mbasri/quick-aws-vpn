@@ -40,20 +40,25 @@ terraform-docs -c .terraform-docs.yml .
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.25.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_client-vpn"></a> [client-vpn](#module\_client-vpn) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-client-vpn | v1.0.0 |
+| <a name="module_client-vpn"></a> [client-vpn](#module\_client-vpn) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-client-vpn | v1.0.1 |
 | <a name="module_kms"></a> [kms](#module\_kms) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-kms | v1.0.4 |
 | <a name="module_security-group"></a> [security-group](#module\_security-group) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-security-group | v1.0.2 |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-vpc | v1.2.0 |
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [aws_acm_certificate.client](https://registry.terraform.io/providers/hashicorp/aws/5.25.0/docs/data-sources/acm_certificate) | data source |
+| [aws_acm_certificate.server](https://registry.terraform.io/providers/hashicorp/aws/5.25.0/docs/data-sources/acm_certificate) | data source |
 
 ## Inputs
 
@@ -63,6 +68,10 @@ No inputs.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_client_vpn_endpoint_arn"></a> [client\_vpn\_endpoint\_arn](#output\_client\_vpn\_endpoint\_arn) | The ARN of the Client VPN Endpoint Connection. |
+| <a name="output_client_vpn_endpoint_dns_name"></a> [client\_vpn\_endpoint\_dns\_name](#output\_client\_vpn\_endpoint\_dns\_name) | The DNS Name of the Client VPN Endpoint Connection. |
+| <a name="output_client_vpn_endpoint_id"></a> [client\_vpn\_endpoint\_id](#output\_client\_vpn\_endpoint\_id) | The ID of the Client VPN Endpoint Connection. |
+| <a name="output_cloudwatchlogs_id"></a> [cloudwatchlogs\_id](#output\_cloudwatchlogs\_id) | The ID of the cloudwatch logs for Client VPN |
 | <a name="output_default_security_group_id"></a> [default\_security\_group\_id](#output\_default\_security\_group\_id) | The ID of the VPC default security group |
 | <a name="output_key_alias_arn"></a> [key\_alias\_arn](#output\_key\_alias\_arn) | The Amazon Resource Name (ARN) of the key alias |
 | <a name="output_key_alias_name"></a> [key\_alias\_name](#output\_key\_alias\_name) | Name of the key alis |
