@@ -35,23 +35,23 @@ terraform-docs -c .terraform-docs.yml .
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.6.3 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 5.25.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.9.4 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 5.62.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.25.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.62.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_client-vpn"></a> [client-vpn](#module\_client-vpn) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-client-vpn | v1.0.1 |
-| <a name="module_kms"></a> [kms](#module\_kms) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-kms | v1.0.4 |
-| <a name="module_security-group"></a> [security-group](#module\_security-group) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-security-group | v1.0.2 |
-| <a name="module_vpc"></a> [vpc](#module\_vpc) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-vpc | v1.2.0 |
+| <a name="module_client-vpn"></a> [client-vpn](#module\_client-vpn) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-client-vpn | v1.1.0 |
+| <a name="module_kms"></a> [kms](#module\_kms) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-kms | v1.2.0 |
+| <a name="module_security-group"></a> [security-group](#module\_security-group) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-security-group | v1.1.0 |
+| <a name="module_vpc"></a> [vpc](#module\_vpc) | git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-vpc | v1.6.0 |
 
 ## Resources
 
