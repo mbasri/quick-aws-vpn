@@ -10,7 +10,7 @@ Terraform project which create VPC and Client VPN resource on AWS from scratch.
 ### 2. Create infrastructure
 
 ```shell
-git clone https://gitlab.com/mbasri/quick-aws-vpn.git
+git clone https://github.com/mbasri/quick-aws-vpn.git
 cd quick-aws-vpn
 terraform init
 terraform apply
@@ -19,7 +19,7 @@ terraform apply
 ### 2. Destroy infrastructure
 
 ```shell
-git clone https://gitlab.com/mbasri/quick-aws-vpn.git
+git clone https://github.com/mbasri/quick-aws-vpn.git
 cd quick-aws-vpn
 terraform init
 terraform destroy
@@ -99,7 +99,7 @@ No inputs.
 
 ## Author
 
-* [**Mohamed BASRI**](https://gitlab.com/mbasri)
+* [**Mohamed BASRI**](https://github.com/mbasri)
 
 ## License
 
