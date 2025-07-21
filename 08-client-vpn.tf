@@ -2,7 +2,7 @@
 # Client VPN
 #---------------------------------------------------------------------------------------------------
 module "client-vpn" {
-  source = "git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-client-vpn?ref=v1.2.0"
+  source = "git::https://gitlab.com/mbasri-terraform/modules/aws/terraform-aws-client-vpn?ref=v1.3.0"
 
   description = local.description
 
