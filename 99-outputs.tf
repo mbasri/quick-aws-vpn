@@ -84,14 +84,14 @@ output "default_security_group_id" {
   value       = module.vpc.default_security_group_id
 }
 
-output "vpc_flow_log_cwl_id" {
+output "vpc_flow_logs_cwl_id" {
   description = "The ID of the cloudwatch logs for VPC flow logs"
-  value       = module.vpc.vpc_flow_log_cwl_id
+  value       = module.vpc.vpc_flow_logs_cwl_id
 }
 
-output "spot_logging_cwl_id" {
+output "spot_logs_cwl_id" {
   description = "The IDs of the cloudwatch logs for Spot logging"
-  value       = module.vpc.spot_logging_cwl_id
+  value       = module.vpc.spot_logs_cwl_id
 }
 
 #---------------------------------------------------------------------------------------------------
